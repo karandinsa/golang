@@ -6,18 +6,23 @@ func main() {
 	var bigInt int64 = 1<<32 - 1
 	var unsignedInt uint = 100500
 	var unsignedBigInt uint64 = 1<<64 - 1
+
 	//целые числа
 	println("integers:", i, autoInt, bigInt, unsignedInt, unsignedBigInt)
+
 	//числа с плавающей точкой
 	var p float32 = 3.14
 	println("float:", p)
+
 	//булевы значения
 	var b bool = true
 	println("bool variable:", b)
+
 	// строки
 	var hello string = "Hello\n\t"
 	var world = "World"
 	println(hello, world)
+
 	//бинарные данные
 	var rawBinary byte = '\x27'
 	println("rawBinary", rawBinary)
@@ -47,5 +52,23 @@ func main() {
 	World`
 	println("as-is escaping: ", escaping)
 
+	//значения по умолчанию
+	var defaultInt int
+	var defaultFloat float32
+	var defaultString string
+	var defaultBool bool
+
+	println("default values:", defaultInt, defaultFloat, defaultString, defaultBool)
+
+	//указание нескольких переменных
+	var v1, v2 = "v1", "v2"
+	println(v1, v2)
+
+	var (
+		m0 int    = 12
+		m2 string = "string"
+		m3        = 23
+	)
+	println("common declares:", m0, m2, m3)
 	return
 }
