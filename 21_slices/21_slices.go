@@ -53,4 +53,25 @@ func main() {
 	slice4 = append(slice4, []int{1, 2, 3, 4, 5, 6}...)
 	slice4[1] = 999
 	fmt.Println(slice4, slice5)
+
+	//неверное копирование слайса
+	var slice6 []int
+	copy(slice6, slice5)
+	fmt.Println(slice6)
+
+	//верное копирование слайса
+	slice7 := make([]int, len(slice5), len(slice5))
+	copy(slice7, slice5)
+	fmt.Println(slice7)
+
+	//работа с частями слайса
+	fmt.Println("Часть слайса:", slice7[1:5], slice7[:2], slice7[10:])
+	slice8 := append(slice7[:2], slice7[10:]...)
+	fmt.Println("Из кусков слайса:", slice8)
+
+	//создание слайса из массива
+	a := [...]int{5, 6, 7}
+	sl8 := a[:]
+	a[1] = 8
+	fmt.Println("Слайс из массива", sl8)
 }
