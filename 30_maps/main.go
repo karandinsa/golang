@@ -48,4 +48,11 @@ func main() {
 	mm4[key] = "test"
 	fmt.Println(mm3, mm4)
 
+	mm7 := map[string]string{}
+	mm8 := map[int]map[string]string{}
+
+	mm7["status"] = "ok"
+	mm8[1] = mm7
+	fmt.Println(mm8[1]["status"])
+
 }

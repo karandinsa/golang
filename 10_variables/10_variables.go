@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func main() {
 	var i int = 10
 	var autoInt = -10
@@ -70,5 +72,9 @@ func main() {
 		m3        = 23
 	)
 	println("common declares:", m0, m2, m3)
+
+	x := "7" +
+		"6"
+	fmt.Println(x)
 	return
 }
