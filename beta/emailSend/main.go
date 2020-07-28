@@ -84,7 +84,8 @@ func sendEmailWithAttach(d *mail.Dialer, email string, from string, subj string,
 }
 
 func makeReport(errMap map[string]error, subject string, messageTextToReport string) (string, error) {
-	pdf := gofpdf.New("P", "mm", "A4", "C:/Users/ksa/go/src/github.com/jung-kurt/gofpdf/font")
+	osPath, _ := os.Getwd()
+	pdf := gofpdf.New("P", "mm", "A4", osPath+"/font")
 	pdf.AddFont("Helvetica", "", "helvetica_1251.json")
 	pdf.AddPage()
 	pdf.SetFont("Helvetica", "", 16)
